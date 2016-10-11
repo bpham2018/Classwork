@@ -36,7 +36,12 @@ public class foxGooseSeeds
 		System.out.println();
 		System.out.println( "Transport all 3 items to the other side without fail and you will win!" );
 		System.out.println();
-		
+		System.out.println( "fox goose seeds human" );
+		System.out.println("__________________________________");
+		System.out.println("~~~~~~~~~~<><~~~~~~~~~<><~~~~~~~~~");
+		System.out.println("~~~~~~~~~~<><~~~~~~~~~<><~~~~~~~~~");
+		System.out.println("~~~~~~~~~~<><~~~~~~~~~<><~~~~~~~~~");
+		System.out.println("__________________________________");
 		
 		while( gameLose != true && gameWin != true )
 		{
@@ -87,8 +92,8 @@ public class foxGooseSeeds
 		Scanner keyboard = new Scanner(System.in);
 		
 		
-		System.out.print( "Which item do you want to move? fox, goose, seeds or none: " );
-		String userPick = keyboard.nextLine();
+		System.out.print( "Which item do you want to move? fox, goose, seeds, human or none: " );
+		String userPick = screenUserInput(keyboard);
 		
 		if( userPick.equals( "none" ) )
 		{
@@ -248,7 +253,22 @@ public class foxGooseSeeds
 		
 	}
 	
+	public static String screenUserInput(Scanner kb)
+	{
+		String input = kb.nextLine();
+
+		if (!input.equals("fox") && !input.equals("goose") && !input.equals("seeds") && !input.equals("human") )
+		{
+			
+			System.out.println();
+			System.out.println("Only fox, goose, seeds, and human are valid inputs" );
+			return screenUserInput(kb);
+		
+		}
+		
+		return input;
 	
+	}
 	
 	
 }
